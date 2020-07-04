@@ -19,7 +19,7 @@ const ebookModel = require('../src/models/ebook-model');
 
 const authRouter = require('../src/routes/auth-route');
 const adminRouter = require('../src/routes/admin-route');
-const studentRouter= require('../src/routes/student-route');
+const studentRouter = require('../src/routes/student-route');
 
 app.use(bodyParser.json({
     limit: "5mb"
@@ -28,13 +28,11 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
-
-app.use(cors());
-
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization , i9-token');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    app.use(cors());
     next();
 });
 
