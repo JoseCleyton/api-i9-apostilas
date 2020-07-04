@@ -5,7 +5,7 @@ const http = require('http');
 const debug = require('debug')('api-i9-apostilas');
 
 const app = require('../app');
-const port = normalizePort(process.env.PORT || '3000');
+const port = process.env.PORT;
 const server = http.createServer(app);
 const router = express.Router();
 
