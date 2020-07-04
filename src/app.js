@@ -36,7 +36,11 @@ app.use(function (req, res, next) {
     next();
 });
 
-
+app.use('/', (req, res, next)=>{
+    res.status(200).send({
+        message: 'API-I9-APOSTILAS v1'
+    });
+})
 app.use('/auth', authRouter);
 app.use('/admin', adminRouter);
 app.use('/student', studentRouter);
