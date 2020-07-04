@@ -86,7 +86,7 @@ exports.getTotalUsers = async (req, res, next) => {
     })
 };
 exports.updateEbook = async (req, res, next) => {
-    const result = await adminRepository.updateUser(req.body._id, req.body.user);
+    const result = await adminRepository.updateUser(req.body._id, req.body.ebook);
     if (result.nModified >= 1) {
         res.status(200).send();
     }
