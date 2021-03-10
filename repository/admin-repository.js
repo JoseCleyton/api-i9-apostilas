@@ -59,6 +59,10 @@ exports.updateUser = async (id, data) => {
         name
     });
 };
+exports.deleteUser = async (_id) => {
+    const user = await User.deleteOne({ _id: _id });
+    return user;
+};
 
 exports.addClas = async (data) => {
     let clas = new Clas(data);

@@ -73,6 +73,7 @@ exports.addUser = async (req, res, next) => {
         user: user
     })
 };
+
 exports.getUsers = async (req, res, next) => {
     const users = await adminRepository.getUsers();
     res.status(200).send({
@@ -85,6 +86,14 @@ exports.getTotalUsers = async (req, res, next) => {
         totalUsers: totalUsers
     })
 };
+
+exports.deleteUser = async (req, res, next) => {
+    const user = await adminRepository.deleteUser(req.params._id);
+    res.status(200).send({
+        user: user
+    })
+};
+
 exports.updateEbook = async (req, res, next) => {
     const result = await adminRepository.updateEbook(req.body._id, req.body.ebook);
     if (result.nModified >= 1) {

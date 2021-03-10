@@ -19,6 +19,7 @@ router.post('/user', authService.isAdmin, adminController.addUser);
 router.get('/user', authService.isAdmin, adminController.getUsers);
 router.get('/user/totalUsers', authService.isAdmin, adminController.getTotalUsers);
 router.put('/user', authService.isAdmin, adminController.updateUser);
+router.delete('/user/:_id', authService.isAdmin, adminController.deleteUser)
 
 router.post('/clas', authService.isAdmin, adminController.addClas);
 router.get('/clas', authService.isAdmin, adminController.getClasses);
